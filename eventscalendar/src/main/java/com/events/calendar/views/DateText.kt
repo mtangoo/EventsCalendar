@@ -88,7 +88,7 @@ class DateText : View {
             isSelected = attributes.getBoolean(R.styleable.DateText_isSelected, false)
             hasEvent = attributes.getBoolean(R.styleable.DateText_hasEvent, false)
             isToday = attributes.getBoolean(R.styleable.DateText_isToday, false)
-            isPast = attributes.getBoolean(R.styleable.DateText_isPast, false)
+      //      isPast = attributes.getBoolean(R.styleable.DateText_isPast, false)
         } finally {
             attributes.recycle()
         }
@@ -181,10 +181,12 @@ class DateText : View {
     override fun onDraw(canvas: Canvas) {
         val location = IntArray(2)
         this.getLocationOnScreen(location)
-        if (isPast) {
-            mDateTextPaint.color = disabledTextColor
-            canvas.drawText("" + mDate.get(Calendar.DATE), mDateTextX.toFloat(), mDateTextY, mDateTextPaint)
-        } else {
+ //       if (isPast) {
+  //          mDateTextPaint.color = disabledTextColor
+    //        canvas.drawText("" + mDate.get(Calendar.DATE), mDateTextX.toFloat(), mDateTextY, mDateTextPaint)
+     //   } 
+       // else 
+        {
             if (isCurrentMonth && !isDisabled) {
                 if (isToday) canvas.drawCircle(mCircleX.toFloat(), mCircleY.toFloat(), mTodayCircleRadius, mTodayPaint)
                 when (EventsCalendarUtil.SELECTION_MODE) {
